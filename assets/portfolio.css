@@ -493,3 +493,7 @@ html[data-motion="reduced"] .marquee ul{flex-wrap:wrap;justify-content:center;ro
   .stack-card p{font-size:clamp(.82rem,2.9vw,.96rem)!important}
 }
 .stack-card{height:auto!important;min-height:0!important}
+
+/* Foxglove: official symbol from foxglove.dev/media; invert on dark backgrounds. */
+.skill-icon img.foxglove-logo{object-fit:contain}
+html[data-theme="dark"] .skill-icon img.foxglove-logo{filter:invert(1)}
