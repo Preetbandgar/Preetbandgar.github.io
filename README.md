@@ -7,6 +7,8 @@ autonomous navigation, SLAM, technical case studies, previous experience and res
 
 ## Selected work
 
+- **ROS 2 Mobile Robot Platform — Hardware to Cloud (in progress):** Actual chassis dry-fit and clearance checks are documented; motor control, ROS 2 autonomy and cloud robotics remain planned stages. See [build journal](projects/physical-differential-drive-robot.html).
+
 - **Autonomous Mobile Robot Navigation & SLAM:** TurtleBot3 mapping, AMCL and Nav2;
   documented doorway experiments and a recorded four-waypoint mission.
 - **Differential-Drive Robot Simulation:** Gazebo Harmonic, URDF/Xacro, a 2-DOF arm,
