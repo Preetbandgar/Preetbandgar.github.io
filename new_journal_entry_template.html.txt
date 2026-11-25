@@ -1,0 +1,39 @@
+<!-- PRIVATE TEMPLATE — fill in actual facts, remove unused sections, then paste into the journal. -->
+<details class="robot-journal-entry" id="build-YYYY-MM-DD-short-slug" open>
+  <summary>
+    <span class="robot-journal-summary">
+      <span class="paper-index">DD MONTH YYYY · ENTRY 002</span>
+      <strong>Actual milestone or investigation title</strong>
+      <span class="robot-journal-subtitle">One-line description of what this entry contains</span>
+    </span>
+    <span class="robot-journal-chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="robot-journal-content">
+    <p class="robot-journal-note">Recorded on DD Month YYYY. <a href="#build-YYYY-MM-DD-short-slug">Link to this entry ↗</a></p>
+    <h2>Objective</h2>
+    <p>What I wanted to verify and why.</p>
+    <h2>Work completed</h2>
+    <ul class="engineering-points">
+      <li>One specific action or engineering decision.</li>
+      <li>One specific implementation or test setup.</li>
+    </ul>
+    <h2>Results and observations</h2>
+    <ul class="engineering-points">
+      <li>Actual observations, measurements and units, test conditions, and pass/fail status.</li>
+      <li>Issues, limitations or reasons for a failed test, if applicable.</li>
+    </ul>
+    <h2>Evidence</h2>
+    <!-- Example: replace filename, dates, alt text and caption with your real evidence. Remove if unused. -->
+    <div class="evidence-gallery">
+      <figure class="detail-figure">
+        <a class="media-zoom" data-lightbox="" href="../assets/media/physical-robot/YYYY-MM-DD/evidence.webp" aria-label="Enlarge build evidence">
+          <img src="../assets/media/physical-robot/YYYY-MM-DD/evidence.webp" alt="Describe what is actually shown" loading="lazy" decoding="async"/>
+        </a>
+        <figcaption>What this image demonstrates, without overstating it.</figcaption>
+      </figure>
+    </div>
+    <!-- Add a link to an actual GitHub commit, log or dated PDF here if available. -->
+    <h2>Next step</h2>
+    <p>What remains to be tested or completed.</p>
+  </div>
+</details>

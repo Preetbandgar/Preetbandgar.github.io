@@ -520,3 +520,113 @@ html[data-theme="dark"] .skill-icon img.foxglove-logo{filter:invert(1)}
     aspect-ratio: 16 / 10;
   }
 }
+
+/* Portfolio V20: responsive control clearance and text rhythm only; motion unchanged. */
+/* Keep the Foxglove symbol visible on its light icon tile in both themes. */
+.stack-card .skill-icon img.foxglove-logo { display:block; width:72%; height:72%; object-fit:contain; filter:none!important; opacity:1; }
+html[data-theme="dark"] .stack-card .skill-icon img.foxglove-logo { filter:none!important; }
+/* Reserve footer space for the fixed scroll button, particularly in narrow and split-screen layouts. */
+.contact footer, .contact--compact footer { padding-right:clamp(70px,9vw,96px); column-gap:14px; row-gap:14px; flex-wrap:wrap; }
+.contact footer .motion-toggle, .contact--compact footer .motion-toggle { margin-left:0; position:relative; z-index:1; white-space:nowrap; }
+.jump-toggle { right: max(16px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); }
+@media (max-width: 850px) {
+  .contact footer, .contact--compact footer { display:flex; align-items:center; justify-content:flex-start; padding-right:82px; gap:14px 22px; min-height:90px; }
+  .contact footer .motion-toggle, .contact--compact footer .motion-toggle { order:3; margin:0; }
+}
+@media (max-width: 480px) {
+  .contact footer, .contact--compact footer { padding-bottom:28px; padding-right:84px; gap:10px 18px; }
+  .contact footer .motion-toggle, .contact--compact footer .motion-toggle { display:inline-block; font-size:.79rem; min-height:32px; }
+  .detail-main p, .detail-main li { overflow-wrap:break-word; }
+  .detail-main .engineering-points { padding-left:1.25rem; }
+}
+/* Support long copy without crowded lists; typography and existing transitions remain unchanged. */
+.detail-main .engineering-points li { line-height:1.7; margin-block:10px; }
+.detail-main > p { max-width:72ch; line-height:1.75; }
+
+/* Build journal update: scoped additions only. */
+.current-build-heading { min-width:0; padding-top:36px; }
+.current-build-heading .eyebrow { color:#957247; }
+.current-build-heading .eyebrow::after { content:''; display:inline-block; width:44px; height:1px; background:currentColor; vertical-align:middle; margin-left:14px; opacity:.7; }
+.current-build-heading h2 { font-size:clamp(2.8rem,5.2vw,5.4rem); margin:14px 0 0; }
+.current-build-heading h2 em { color:#8a6232; }
+html[data-theme="dark"] .current-build-heading .eyebrow { color:var(--amber); }
+html[data-theme="dark"] .current-build-heading h2 em { color:#e7ad63; }
+.current-build-body .current-build-button { margin-top:24px; max-width:100%; }
+@media(max-width:780px) {
+  .current-build-heading { padding-top:0; margin-bottom:30px; }
+  .current-build-section .current-build-body { padding-top:30px; }
+}
+/* Dated entry index, confined to the robot case study. */
+.build-journal-index { margin:24px 0 42px; padding:20px 22px; border:1px solid var(--outline); border-radius:16px; background:var(--surface); }
+.build-journal-index h2 { margin:0 0 10px!important; font-size:clamp(1.3rem,2vw,1.65rem); }
+.build-journal-index p { margin:0 0 14px; }
+.build-journal-index ol { list-style:none; padding:0; margin:0; }
+.build-journal-index li { margin:0; padding:13px 0; border-top:1px solid var(--outline); }
+.build-journal-index li:last-child { padding-bottom:0; }
+.build-journal-index time { display:block; color:var(--subtext); font-size:.8rem; margin-bottom:4px; }
+.build-journal-index a { color:var(--text); font-weight:700; text-underline-offset:4px; overflow-wrap:anywhere; }
+.build-journal-index a:hover { color:var(--amber); }
+.build-journal-index + .eyebrow { display:block; margin-top:12px; }
+.build-journal-index + .eyebrow + h2 { margin-top:16px; }
+@media(max-width:480px) { .build-journal-index { padding:17px; margin-bottom:32px; } }
+
+/* V21 — Current Build and robot journal only. */
+.current-build-section .current-build-heading{min-width:0;padding-top:2px}
+.current-build-heading .eyebrow{color:#7a5a2e}
+.current-build-heading .eyebrow::after{content:"";display:inline-block;width:44px;height:1px;background:currentColor;vertical-align:middle;margin-left:14px;opacity:.7}
+.current-build-heading h2{font-size:clamp(2.8rem,5.2vw,5.4rem);margin:14px 0 0;line-height:1.14;overflow-wrap:normal}
+.current-build-heading h2 em{color:#8a6232}
+html[data-theme="dark"] .current-build-heading .eyebrow{color:#e0b57c}
+html[data-theme="dark"] .current-build-heading h2 em{color:#e7ad63}
+.current-build-body .button{margin-top:22px;max-width:100%;white-space:normal}
+@media(max-width:780px){.current-build-section .current-build-heading{padding:0 0 28px}.current-build-heading h2{font-size:clamp(2.55rem,9vw,4.2rem)}.current-build-body{padding-top:25px}}
+.robot-current-status{border:1px solid var(--outline);border-radius:14px;background:var(--surface);padding:20px 22px;margin:24px 0 34px;scroll-margin-top:95px}
+.robot-current-status .paper-index{display:block;margin-bottom:12px}
+.robot-current-status p{margin:0 0 9px;line-height:1.65}
+.robot-current-status p:last-child{margin-bottom:0}
+.robot-journal-list{display:grid;gap:15px;margin:22px 0 0;min-width:0}
+.robot-journal-entry{border:1px solid var(--outline);border-radius:15px;background:var(--surface);min-width:0;scroll-margin-top:95px;overflow:hidden}
+.robot-journal-entry>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;cursor:pointer;list-style:none;color:var(--text)}
+.robot-journal-entry>summary::-webkit-details-marker{display:none}
+.robot-journal-entry>summary:focus-visible{outline:2px solid var(--amber);outline-offset:-4px;border-radius:14px}
+.robot-journal-summary{display:grid;gap:6px;min-width:0}
+.robot-journal-summary strong{font-family:Manrope,system-ui,sans-serif;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.3;overflow-wrap:anywhere}
+.robot-journal-subtitle{color:var(--subtext);font-size:.9rem;line-height:1.5}
+.robot-journal-chevron{flex:0 0 11px;width:11px;height:11px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-right:4px}
+.robot-journal-entry[open]>.robot-journal-chevron,.robot-journal-entry[open]>summary .robot-journal-chevron{transform:rotate(225deg)}
+.robot-journal-entry[open]>summary{border-bottom:1px solid var(--outline)}
+.robot-journal-content{padding:22px;min-width:0;overflow-wrap:break-word}
+.robot-journal-content .robot-journal-note{color:var(--subtext);font-size:.85rem;line-height:1.65;border-bottom:1px solid var(--outline);padding-bottom:16px;margin:0 0 22px}
+.robot-journal-note a{white-space:normal;text-decoration:underline;text-underline-offset:3px}
+.robot-journal-content h2{margin-top:28px}
+.robot-journal-content h2:first-of-type{margin-top:18px}
+.robot-journal-content pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
+.robot-journal-content img,.robot-journal-content video{max-width:100%}
+.robot-journal-content .evidence-gallery{min-width:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+@media(max-width:600px){.robot-journal-entry>summary{padding:16px}.robot-journal-content{padding:16px}.robot-current-status{padding:17px}.robot-journal-content .evidence-gallery{grid-template-columns:1fr}}
+
+
+/* Current build button alignment */
+.current-build-body .button {
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* FINAL BUTTON SPACING START */
+
+.button,
+.about-links .button,
+.hero-actions .button,
+.contact-actions .button,
+.current-build-body .button {
+    gap: 6px !important;
+    justify-content: center !important;
+}
+
+.button span[aria-hidden="true"] {
+    flex-shrink: 0;
+}
+
+/* FINAL BUTTON SPACING END */

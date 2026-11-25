@@ -1,63 +1,37 @@
 # Pritam Bandgar — Robotics Software Engineering Portfolio
 
-Live website: **https://preetbandgar.github.io/**
+Source for my GitHub Pages portfolio: https://preetbandgar.github.io/
 
-A personal engineering portfolio showcasing independent ROS 2 projects, simulation,
-autonomous navigation, SLAM, technical case studies, previous experience and research.
+The site documents hands-on ROS 2 and robotics projects, research, technical skills, and selected DevOps work. Case studies link to source repositories and the evidence available for each project. Work in progress is described as such.
 
-## Selected work
+## Site structure
 
-- **ROS 2 Mobile Robot Platform — Hardware to Cloud (in progress):** Actual chassis dry-fit and clearance checks are documented; motor control, ROS 2 autonomy and cloud robotics remain planned stages. See [build journal](projects/physical-differential-drive-robot.html).
+- `index.html` — homepage, generated from `_includes/`
+- `projects/` — project archive and individual case studies
+- `certificates.html` and `cv.html` — training record and CV viewer
+- `assets/` — styles, JavaScript, photos, demo videos, project files and public PDF
+- `scripts/build_home.py` — regenerates the homepage
+- `build_preview.py` — generates a standalone phone-preview HTML file
 
-- **Autonomous Mobile Robot Navigation & SLAM:** TurtleBot3 mapping, AMCL and Nav2;
-  documented doorway experiments and a recorded four-waypoint mission.
-- **Differential-Drive Robot Simulation:** Gazebo Harmonic, URDF/Xacro, a 2-DOF arm,
-  RGB camera and IMU; configured `robot_localization` EKF, with validation ongoing.
-- **Modular ROS 2 Robotics Software Development:** Python (`rclpy`) packages,
-  custom ROS interfaces, testing and Docker/GitHub Actions development workflow.
-- **ROS 2 Multi-Node Control:** Turtlesim nodes communicating through ROS 2 topics,
-  services and custom interfaces.
-- **DevOps case studies:** AWS EKS, Terraform, GitHub Actions, Argo CD and Jenkins,
-  with original upstream/course sources credited in the respective case studies.
-
-The website also describes MSc dissertation research in computer vision and a
-co-authored automated parking systems paper.
-
-## Website technology
-
-Static HTML, CSS and JavaScript deployed with GitHub Pages. The homepage is
-assembled from editable `_includes/` sections; project case studies live in
-`projects/`. Local images and videos live in `assets/`.
-
-### Preview locally
-
-```bash
-python3 -m http.server 8000
-```
-
-Open `http://localhost:8000/` in a browser.
-
-### Edit the homepage
-
-Edit the relevant `_includes/*.html` file, then run:
+## Local preview
 
 ```bash
 python3 scripts/build_home.py
+python3 -m http.server 8000
 ```
 
-Commit both the edited include and regenerated `index.html` when publishing.
-For the current build process, Python 3 is sufficient; the served website has
-no runtime Python requirement.
+Open `http://localhost:8000/`. To generate a standalone multi-page phone preview (requires Beautiful Soup):
 
-### Update the CV
+```bash
+python3 build_preview.py
+```
 
-Replace `assets/cv/Pritam_Bandgar_CV.pdf` with the current approved PDF while
-keeping that filename so existing links continue to work.
+## Editing and deployment
 
-## Notes
+Edit the appropriate `_includes/*.html` file rather than editing the generated homepage in isolation. Regenerate `index.html` using `python3 scripts/build_home.py`. The public component PDF is limited to parts intended for the physical robot build.
 
-Project write-ups distinguish completed demonstrations from planned work.
-The physical differential-drive robot, Nav2/RTAB-Map integration, and EKF
-accuracy validation should be updated as implementation and testing progress.
+The site is static HTML, CSS and JavaScript. Publishing changes requires a Git commit to the GitHub Pages repository. Previous release and maintenance notes are archived in `MAINTENANCE_HISTORY.md`.
 
-Maintainer: [Pritam Bandgar](https://github.com/Preetbandgar)
+## Source attribution
+
+The TurtleBot3 simulation uses ROBOTIS and ROS 2/Nav2 components. The OpenTelemetry Demo and course-based applications are credited in their respective case studies. Project write-ups distinguish completed work from planned integration.
